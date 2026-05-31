@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Network Portal</title>
+    <style>
+        :root {
+            --bg-base: #06090e; /* Deep ocean slate black */
+            --bg-surface: #0b1017; /* Solid metallic dark surface */
+            --bg-surface-glow: rgba(0, 255, 170, 0.02);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --accent-primary: #00ffaa; /* Electric Emerald Mint */
+            --accent-primary-hover: #1effbe;
+            --text-main: #ffffff;
+            --text-muted: #708090;
+            --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            /* NEW BACKGROUND EFFECT: Top-right and bottom-left geometric ambient orbs */
+            background-image: 
+                radial-gradient(circle at 80% 10%, rgba(0, 255, 170, 0.08), transparent 45%),
+                radial-gradient(circle at 10% 90%, rgba(0, 136, 204, 0.04), transparent 40%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Nav Header */
+        header {
+            width: 100%;
+            max-width: 1200px;
+            padding: 30px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        .brand-logo span {
+            color: var(--accent-primary);
+            text-shadow: 0 0 15px rgba(0, 255, 170, 0.4);
+        }
+
+        /* Main Container */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 480px;
+            padding: 20px 24px 60px;
+        }
+
+        /* Value Proposition */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 255, 170, 0.08);
+            border: 1px solid rgba(0, 255, 170, 0.2);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(to bottom, #ffffff 70%, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Hub Card */
+        .portal-card {
+            background: var(--bg-surface);
+            background-image: linear-gradient(to bottom right, var(--bg-surface-glow), transparent);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 32px 24px;
+            width: 100%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        }
+
+        /* Official Links Title from 1000114846.jpg */
+        .card-title {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .card-title span {
+            color: var(--accent-primary); /* Adjusted to match the new color scheme */
+        }
+
+        .action-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Core Buttons */
+        .btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 18px 24px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease, background 0.2s ease;
+            width: 100%;
+            border: 1px solid transparent;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Alternate Main Button Color (High contrast inversion against dark slate) */
+        .btn-main {
+            background: var(--accent-primary);
+            color: #04060a; /* Dark text for ultimate readability on neon mint */
+            box-shadow: 0 8px 24px rgba(0, 255, 170, 0.2);
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .btn-main:hover {
+            background: var(--accent-primary-hover);
+            box-shadow: 0 12px 32px rgba(0, 255, 170, 0.35);
+            transform: translateY(-1px);
+        }
+
+        /* Secondary Links Customization */
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 255, 170, 0.3); /* Soft mint glow outline on hover */
+        }
+
+        /* Dynamic Icons using inline SVGs */
+        .btn::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-right: 12px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .btn-main::before { display: none; }
+        
+        .btn-tg::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230088cc'%3E%3Cpath d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.231-.697.064-1.226-.461-1.901-.903-1.057-.692-1.653-1.123-2.678-1.799-1.185-.781-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-2.915 3.332-1.094 4.025-1.284 4.477-1.292.1.002.322.027.465.144.12.099.153.234.159.327.005.088-.002.261-.011.353z'/%3E%3C/svg%3E");
+        }
+
+        .btn-wa::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2325d366'%3E%3Cpath d='M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.312 1.592 5.448 0 9.879-4.43 9.882-9.88.002-2.638-1.03-5.118-2.905-6.995-1.876-1.875-4.359-2.903-6.997-2.904-5.449 0-9.88 4.43-9.883 9.88-.001 2.011.52 3.98 1.506 5.707l-.98 3.58 3.674-.963zm10.92-7.14c-.29-.145-1.716-.848-1.982-.944-.266-.096-.46-.145-.653.145-.193.29-.748.944-.917 1.137-.168.193-.338.217-.628.072-.29-.145-1.223-.45-2.33-1.439-.86-.767-1.44-1.716-1.609-2.006-.168-.29-.018-.447.127-.591.13-.13.29-.338.435-.507.145-.168.193-.29.29-.483.097-.193.048-.361-.024-.507-.072-.145-.653-1.573-.894-2.152-.235-.565-.475-.489-.653-.498-.17-.008-.362-.01-.555-.01s-.507.072-.772.361c-.266.29-1.013.99-1.013 2.413 0 1.422 1.037 2.797 1.182 2.99.145.193 2.04 3.115 4.94 4.373.688.298 1.227.477 1.646.61.693.22 1.324.19 1.823.115.556-.084 1.716-.7 1.958-1.374.242-.674.242-1.253.169-1.374-.073-.121-.266-.193-.556-.338z'/%3E%3C/svg%3E");
+        }
+
+        /* Footer Details */
+        footer {
+            width: 100%;
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #242c37;
+            border-top: 1px solid rgba(255, 255, 255, 0.01);
+        }
+
+        .footer-box p {
+            margin-bottom: 6px;
+        }
+
+        .footer-link {
+            color: #4b5563;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo">Vault<span>HQ</span></div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <span class="badge">Backup Gateway</span>
+            <h1>Secure Portal</h1>
+            <p class="tagline">Alternate connection node. Use the verified pathways below to bypass outages and access premium updates instantly.</p>
+        </section>
+
+        <div class="portal-card">
+            <!-- TITLED INJECTED PER 1000114846.jpg -->
+            <h2 class="card-title">Official <span>Links:</span></h2>
+
+            <div class="action-group">
+                <!-- 1. MAIN TELEGRAM CHANNEL -->
+                <a href="https://t.me/example" class="btn btn-secondary btn-tg">Telegram Community</a>
+                
+                <!-- 2. TELEGRAM BACKUP -->
+                <a href="https://t.me/example_backup" class="btn btn-secondary btn-tg">Telegram Backup</a>
+                
+                <!-- 3. WHATSAPP BROADCAST -->
+                <a href="https://whatsapp.com/channel/example" class="btn btn-secondary btn-wa">WhatsApp Broadcast</a>
+
+                <!-- 4. MAIN PORTAL CALL TO ACTION -->
+                <a href="https://example.com" class="btn btn-main">Enter Premium Vault</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-box">
+            <p>&copy; 2026 VaultHQ Alternate. All rights reserved.</p>
+            <p>Secure Support: <a href="mailto:support@example.com" class="footer-link">support@example.com</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
