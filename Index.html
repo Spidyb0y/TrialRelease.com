@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Network Portal</title>
+    <title>Premium Secure Portal</title>
     <style>
         :root {
-            --bg-base: #06090e; /* Deep ocean slate black */
-            --bg-surface: #0b1017; /* Solid metallic dark surface */
-            --bg-surface-glow: rgba(0, 255, 170, 0.02);
+            --bg-base: #030712; /* Deep space black/gray */
+            --bg-surface: #0b0f19; /* High-tech dark navy surface */
+            --bg-surface-glow: rgba(0, 102, 255, 0.03);
             --border-color: rgba(255, 255, 255, 0.06);
-            --accent-primary: #00ffaa; /* Electric Emerald Mint */
-            --accent-primary-hover: #1effbe;
+            --accent-primary: #00d2ff; /* Bright Electric Cyan-Blue */
+            --accent-primary-hover: #33ddff;
+            --accent-glow: #0066ff; /* Deep Sapphire Glow */
             --text-main: #ffffff;
-            --text-muted: #708090;
+            --text-muted: #64748b;
             --font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
@@ -25,10 +26,10 @@
 
         body {
             background-color: var(--bg-base);
-            /* NEW BACKGROUND EFFECT: Top-right and bottom-left geometric ambient orbs */
+            /* NEW BACKGROUND EFFECT: Centered vertical stream blue orbs */
             background-image: 
-                radial-gradient(circle at 80% 10%, rgba(0, 255, 170, 0.08), transparent 45%),
-                radial-gradient(circle at 10% 90%, rgba(0, 136, 204, 0.04), transparent 40%);
+                radial-gradient(circle at 50% 0%, rgba(0, 102, 255, 0.12), transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(0, 210, 255, 0.04), transparent 40%);
             background-attachment: fixed;
             color: var(--text-main);
             font-family: var(--font-stack);
@@ -59,7 +60,7 @@
 
         .brand-logo span {
             color: var(--accent-primary);
-            text-shadow: 0 0 15px rgba(0, 255, 170, 0.4);
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
 
         /* Main Container */
@@ -82,8 +83,8 @@
 
         .badge {
             display: inline-block;
-            background: rgba(0, 255, 170, 0.08);
-            border: 1px solid rgba(0, 255, 170, 0.2);
+            background: rgba(0, 210, 255, 0.08);
+            border: 1px solid rgba(0, 210, 255, 0.2);
             color: var(--accent-primary);
             font-size: 0.75rem;
             font-weight: 700;
@@ -133,7 +134,7 @@
         }
 
         .card-title span {
-            color: var(--accent-primary); /* Adjusted to match the new color scheme */
+            color: var(--accent-primary); /* Adjusted to match blue color scheme */
         }
 
         .action-group {
@@ -163,18 +164,18 @@
             transform: scale(0.98);
         }
 
-        /* Alternate Main Button Color (High contrast inversion against dark slate) */
+        /* Blue CTA Main Button */
         .btn-main {
-            background: var(--accent-primary);
-            color: #04060a; /* Dark text for ultimate readability on neon mint */
-            box-shadow: 0 8px 24px rgba(0, 255, 170, 0.2);
+            background: linear-gradient(135deg, var(--accent-glow) 0%, var(--accent-primary) 100%);
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
             text-transform: uppercase;
             margin-top: 4px;
         }
 
         .btn-main:hover {
-            background: var(--accent-primary-hover);
-            box-shadow: 0 12px 32px rgba(0, 255, 170, 0.35);
+            filter: brightness(1.1);
+            box-shadow: 0 12px 32px rgba(0, 102, 255, 0.45);
             transform: translateY(-1px);
         }
 
@@ -187,7 +188,7 @@
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(0, 255, 170, 0.3); /* Soft mint glow outline on hover */
+            border-color: rgba(0, 210, 255, 0.3); /* Electric blue outline highlight */
         }
 
         /* Dynamic Icons using inline SVGs */
@@ -218,7 +219,7 @@
             padding: 32px 24px;
             text-align: center;
             font-size: 0.8rem;
-            color: #242c37;
+            color: #1e293b;
             border-top: 1px solid rgba(255, 255, 255, 0.01);
         }
 
@@ -227,7 +228,7 @@
         }
 
         .footer-link {
-            color: #4b5563;
+            color: #334155;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s ease;
@@ -241,42 +242,43 @@
 <body>
 
     <header>
-        <div class="brand-logo">Vault<span>HQ</span></div>
+        <div class="brand-logo">SpyOn<span>Her</span></div>
     </header>
 
     <main>
         <section class="hero-section">
-            <span class="badge">Backup Gateway</span>
-            <h1>Secure Portal</h1>
-            <p class="tagline">Alternate connection node. Use the verified pathways below to bypass outages and access premium updates instantly.</p>
+            <span class="badge">Premium Slot</span>
+            <h1>Exclusive Access</h1>
+            <p class="tagline">Experience high-quality entertainment with our unique catagory video. Your trusted source for exclusive content, fast streaming, and complete privacy.</p>
         </section>
 
         <div class="portal-card">
-            <!-- TITLED INJECTED PER 1000114846.jpg -->
-            <h2 class="card-title">Official <span>Links:</span></h2>
+            <!-- TITLE STRUCTURE FROM REFERENCE IMAGE -->
+            <h2 class="card-title">✓ <span>Official Links:</span></h2>
 
             <div class="action-group">
                 <!-- 1. MAIN TELEGRAM CHANNEL -->
-                <a href="https://t.me/example" class="btn btn-secondary btn-tg">Telegram Community</a>
+                <a href="https://t.me/+waAQR3bQslMwNjEx" class="btn btn-secondary btn-tg">Join Telegram</a>
                 
                 <!-- 2. TELEGRAM BACKUP -->
-                <a href="https://t.me/example_backup" class="btn btn-secondary btn-tg">Telegram Backup</a>
+                <a href="https://t.me/+4kvehSXXSg9kZWUx" class="btn btn-secondary btn-tg">Backup Channel</a>
                 
                 <!-- 3. WHATSAPP BROADCAST -->
-                <a href="https://whatsapp.com/channel/example" class="btn btn-secondary btn-wa">WhatsApp Broadcast</a>
+                <a href="https://whatsapp.com/channel/0029Vb7V9kS5EjxpLYxSX50b" class="btn btn-secondary btn-wa">WhatsApp Broadcast</a>
 
                 <!-- 4. MAIN PORTAL CALL TO ACTION -->
-                <a href="https://example.com" class="btn btn-main">Enter Premium Vault</a>
+                <a href="https://lustspy.com/" class="btn btn-main">Visit - LustSpy.com</a>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="footer-box">
-            <p>&copy; 2026 VaultHQ Alternate. All rights reserved.</p>
-            <p>Secure Support: <a href="mailto:support@example.com" class="footer-link">support@example.com</a></p>
+            <p>&copy; 2026 Spyonher.com. All rights reserved.</p>
+            <p>Secure Support: <a href="mailto:rarestuffs4help@gmail.com" class="footer-link">rarestuffs4help@gmail.com</a></p>
         </div>
     </footer>
 
 </body>
 </html>
+
